@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0d;
+    --ink-light: #4a4845;
+    --ink-muted: #8c8a87;
+    --paper: #f7f5f0;
+    --paper-warm: #ede9e1;
+    --rule: #d9d4c9;
+    --accent: #c4411c;
+    --accent-soft: #f4ebe6;
+    --track: #7c3aed;
+    --track-soft: #f0ebfd;
+    --linked: #1a5c8f;
+    --linked-soft: #e8f1f8;
+    --not-linked: #2e7d52;
+    --not-linked-soft: #e8f4ee;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* — Header — */
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 56px 48px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.04) 39px,
+      rgba(255,255,255,0.04) 40px
+    );
+    pointer-events: none;
+  }
+
+  .header-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: #c8bfb0;
+  }
+
+  .header-meta {
+    font-size: 13px;
+    color: var(--ink-muted);
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .header-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* — Layout — */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* — Summary Cards — */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 48px 0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .summary-card {
+    background: var(--paper);
+    padding: 28px 24px;
+    position: relative;
+  }
+
+  .summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .summary-card.tracking::before { background: var(--track); }
+  .summary-card.linked::before { background: var(--linked); }
+  .summary-card.not-linked::before { background: var(--not-linked); }
+
+  .summary-card .card-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .summary-card.tracking .card-label { color: var(--track); }
+  .summary-card.linked .card-label { color: var(--linked); }
+  .summary-card.not-linked .card-label { color: var(--not-linked); }
+
+  .summary-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 2px;
+    border: 1px solid;
+  }
+
+  .tag.tracking { background: var(--track-soft); border-color: #c4b5fd; color: var(--track); }
+  .tag.linked { background: var(--linked-soft); border-color: #93c5e8; color: var(--linked); }
+  .tag.not-linked { background: var(--not-linked-soft); border-color: #86c9a4; color: var(--not-linked); }
+
+  /* — Section heading — */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin: 52px 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .section-heading h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+  }
+
+  .section-heading .count {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* — Data cards — */
+  .data-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .data-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: box-shadow 0.15s;
+  }
+
+  .data-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  }
+
+  .data-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-warm);
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .data-card-header h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  .badge-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  .badge.tracking { background: var(--track-soft); color: var(--track); }
+  .badge.linked { background: var(--linked-soft); color: var(--linked); }
+  .badge.not-linked { background: var(--not-linked-soft); color: var(--not-linked); }
+
+  .data-card-body {
+    padding: 18px 24px;
+  }
+
+  .purpose-row {
+    margin-bottom: 10px;
+  }
+
+  .purpose-row:last-child { margin-bottom: 0; }
+
+  .purpose-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+
+  .purpose-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .purpose-tag {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    color: var(--ink-light);
+  }
+
+  /* — Category block — */
+  .category-block {
+    margin-bottom: 40px;
+  }
+
+  .category-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .category-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* — Divider — */
+  .divider {
+    height: 1px;
+    background: var(--rule);
+    margin: 48px 0;
+  }
+
+  /* — Footer — */
+  footer {
+    background: var(--ink);
+    color: var(--ink-muted);
+    padding: 32px 48px;
+    font-size: 13px;
+    margin-top: 64px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer a { color: var(--paper); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0 0 48px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--ink-light);
+  }
+
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+
+  .legend-dot.tracking { background: var(--track); }
+  .legend-dot.linked { background: var(--linked); }
+  .legend-dot.not-linked { background: var(--not-linked); }
+  .legend-dot.neutral { background: var(--ink-muted); }
+
+  @media (max-width: 600px) {
+    header { padding: 36px 24px 32px; }
+    .container { padding: 0 20px; }
+    footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">App Store · Data & Privacy</div>
+  <h1>Privacy<br><em>Policy</em></h1>
+  <div class="header-meta">
+    <span>🌐 English (U.S.)</span>
+    <span>📋 13 data types collected</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Summary grid -->
+  <div class="summary-grid">
+    <div class="summary-card tracking">
+      <div class="card-label">Used to Track You</div>
+      <h3>Data that may track you across apps and websites</h3>
+      <div class="tag-list">
+        <span class="tag tracking">Contact Info</span>
+        <span class="tag tracking">Diagnostics</span>
+        <span class="tag tracking">User Content</span>
+      </div>
+    </div>
+    <div class="summary-card linked">
+      <div class="card-label">Linked to You</div>
+      <h3>Data collected and linked to your identity</h3>
+      <div class="tag-list">
+        <span class="tag linked">Diagnostics</span>
+        <span class="tag linked">User Content</span>
+        <span class="tag linked">Contact Info</span>
+        <span class="tag linked">Location</span>
+      </div>
+    </div>
+    <div class="summary-card not-linked">
+      <div class="card-label">Not Linked to You</div>
+      <h3>Data collected but not linked to your identity</h3>
+      <div class="tag-list">
+        <span class="tag not-linked">Diagnostics</span>
+        <span class="tag not-linked">Location</span>
+        <span class="tag not-linked">User Content</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot tracking"></span> Used for tracking</div>
+    <div class="legend-item"><span class="legend-dot linked"></span> Linked to identity</div>
+    <div class="legend-item"><span class="legend-dot not-linked"></span> Not linked to identity</div>
+    <div class="legend-item"><span class="legend-dot neutral"></span> Unlinked / no tracking</div>
+  </div>
+
+  <!-- ======================== CONTACT INFO ======================== -->
+  <div class="section-heading">
+    <h2>Contact Info</h2>
+    <span class="count">4 types</span>
+  </div>
+
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Name</h4>
+        <div class="badge-row">
+          <span class="badge linked">Linked to You</span>
+          <span class="badge tracking">Tracking</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+            <span class="purpose-tag">Product Personalization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Email Address</h4>
+        <div class="badge-row">
+          <span class="badge linked">Linked to You</span>
+          <span class="badge tracking">Tracking</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">Product Personalization</span>
+            <span class="purpose-tag">Developer's Advertising or Marketing</span>
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Phone Number</h4>
+        <div class="badge-row">
+          <span class="badge linked">Linked to You</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Physical Address</h4>
+        <div class="badge-row">
+          <span class="badge linked">Linked to You</span>
+          <span class="badge tracking">Tracking</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Other User Contact Info</h4>
+        <div class="badge-row">
+          <span class="badge linked">Linked to You</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================== LOCATION ======================== -->
+  <div class="section-heading">
+    <h2>Location</h2>
+    <span class="count">2 types</span>
+  </div>
+
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Precise Location</h4>
+        <div class="badge-row">
+          <span class="badge not-linked">Not Linked to You</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Coarse Location</h4>
+        <div class="badge-row">
+          <span class="badge linked">Linked to You</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================== USER CONTENT ======================== -->
+  <div class="section-heading">
+    <h2>User Content</h2>
+    <span class="count">3 types</span>
+  </div>
+
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Emails or Text Messages</h4>
+        <div class="badge-row">
+          <span class="badge linked">Linked to You</span>
+          <span class="badge tracking">Tracking</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+            <span class="purpose-tag">Analytics</span>
+            <span class="purpose-tag">Product Personalization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Photos or Videos</h4>
+        <div class="badge-row">
+          <span class="badge linked">Linked to You</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Audio Data</h4>
+        <div class="badge-row">
+          <span class="badge not-linked">Not Linked to You</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================== DIAGNOSTICS ======================== -->
+  <div class="section-heading">
+    <h2>Diagnostics</h2>
+    <span class="count">3 types</span>
+  </div>
+
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Crash Data</h4>
+        <div class="badge-row">
+          <span class="badge not-linked">Not Linked to You</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">Product Personalization</span>
+            <span class="purpose-tag">Analytics</span>
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Performance Data</h4>
+        <div class="badge-row">
+          <span class="badge not-linked">Not Linked to You</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">Third-Party Advertising</span>
+            <span class="purpose-tag">App Functionality</span>
+            <span class="purpose-tag">Product Personalization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <h4>Other Diagnostic Data</h4>
+        <div class="badge-row">
+          <span class="badge linked">Linked to You</span>
+          <span class="badge tracking">Tracking</span>
+        </div>
+      </div>
+      <div class="data-card-body">
+        <div class="purpose-row">
+          <div class="purpose-label">Used for</div>
+          <div class="purpose-tags">
+            <span class="purpose-tag">App Functionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+</div><!-- /container -->
+
+<footer>
+  <span>Privacy Policy · English (U.S.)</span>
+  <span style="color:#555">Privacy Policy URL and User Privacy Choices URL not configured</span>
+</footer>
+
+</body>
+</html>
